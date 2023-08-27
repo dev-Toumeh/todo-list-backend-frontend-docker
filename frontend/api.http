@@ -1,0 +1,28 @@
+GET http://localhost:3001/todos HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:3001/todos HTTP/1.1
+Content-Type: application/json
+
+{
+   "id": "qww33ed",
+  "title": "test",
+  "completed": false
+}
+###
+
+PUT http://localhost:3001/todos/qww33ed HTTP/1.1
+Content-Type: application/json
+
+{
+   "id": "qww33ed",
+  "title": "test",
+  "completed": true
+}
+
+###
+
+PUT http://localhost:3001/todos/qww33ed HTTP/1.1
+Content-Type: application/json

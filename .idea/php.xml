@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-view" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-validator" />
+      <path value="$PROJECT_DIR$/backend/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/backend/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/backend/vendor/fig/http-message-util" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-server-handler" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-server-middleware" />
+      <path value="$PROJECT_DIR$/backend/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/backend/vendor/composer" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-log" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-session" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc-middleware" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-hydrator" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc-plugin-prg" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc-plugin-flashmessenger" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-stratigility" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-di" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc-plugin-fileprg" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-filter" />
+      <path value="$PROJECT_DIR$/backend/vendor/brick/varexporter" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-db" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-authentication" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-psr7bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-component-installer" />
+      <path value="$PROJECT_DIR$/backend/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-i18n" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-cli" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-development-mode" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-config" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-inputfilter" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-form" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-json" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc-plugin-identity" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-http" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc-i18n" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-modulemanager" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-loader" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-router" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-mvc" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-skeleton-installer" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-servicemanager" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-uri" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-stdlib" />
+      <path value="$PROJECT_DIR$/backend/vendor/lm-commons/lmc-cors" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/backend/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/backend/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>
