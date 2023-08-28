@@ -13,4 +13,6 @@
  */
 
 return [
+    'username' => 'root',
+    'password' => '',
 ];

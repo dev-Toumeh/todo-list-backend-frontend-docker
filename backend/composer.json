@@ -25,7 +25,8 @@
         "laminas/laminas-session": "^2.16.0",
         "laminas/laminas-di": "^3.12.0",
         "lm-commons/lmc-cors": "^1.2.0",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+      "ext-pdo": "*"
     },
     "autoload": {
         "psr-4": {

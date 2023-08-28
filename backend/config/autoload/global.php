@@ -15,6 +15,13 @@
 return [
     'db' => [
         'driver' => 'Pdo',
-        'dsn'    => 'mysql:dbname=todolist;host=127.0.0.1;charset=utf8mb4',
+        'dsn' => 'mysql:dbname=todolist;host=127.0.0.1;charset=utf8',
+        'username' => 'root',
+        'password' => '',
     ],
+    'service_manager' => [
+        'factories' => [
+            'Laminas\Db\Adapter\Adapter' => 'Laminas\Db\Adapter\AdapterServiceFactory',
+        ],
+    ]
 ];
