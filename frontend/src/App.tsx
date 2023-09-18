@@ -9,27 +9,28 @@ import axios from "axios";
 
 function App() {
 
-    const originalToDoList: TodoInterface[] = [
-        // {
-        //     id: '222',
-        //     title: 'Buy groceries',
-        //     completed: false
-        // },
-        // {
-        //     id: '34343hhhg',
-        //     title: 'Call mom',
-        //     completed: false
-        // },
-        // {
-        //     id: uuidv4(),
-        //     title: 'Call dad',
-        //     completed: false
-        // }
-    ]
+     const originalToDoList: TodoInterface[] = [
+    //     {
+    //         id: '222',
+    //         title: 'Buy groceries',
+    //         completed: false
+    //     },
+    //     {
+    //         id: '34343hhhg',
+    //         title: 'Call mom',
+    //         completed: false
+    //     },
+    //     {
+    //         id: uuidv4(),
+    //         title: 'Call dad',
+    //         completed: false
+    //     }
+     ]
     const [toDoList, setToDoList] = useState<TodoInterface[]>(originalToDoList);
 
     const fetchToDoList = async () => {
         const response = await axios.get('http://localhost');
+        //console.log(response);
         console.log(response);
         setToDoList([...response.data]);
     }

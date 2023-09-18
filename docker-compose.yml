@@ -1,0 +1,66 @@
+version: "3"
+services:
+
+  web:
+    image: ghcr.io/geerteltink/nginx
+    working_dir: /app
+    container_name: PROJECT_ID-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./public:/app/public:ro,cached
+
+  php:
+    build:
+      dockerfile: ./docker/php/Dockerfile
+    container_name: PROJECT_ID-php
+    environment:
+      XDEBUG_ENABLED: 1
+      XDEBUG_REMOTE_AUTOSTART: 1
+      XDEBUG_MAXNESTING_LEVEL: 1000
+      XDEBUG_REMOTE_CONNECT_BACK: 1
+      XDEBUG_REMOTE_HOST: host.docker.internal
+      PHP_IDE_CONFIG: serverName=localhost
+    ports:
+      - "9004:9003"
+    volumes:
+      - ./docker/php/local:/usr/local/etc/php
+      - .:/app
+      #- ./data:/app/data:rw,delegated
+
+  db:
+    image: ghcr.io/geerteltink/mysql
+    container_name: PROJECT_ID-db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=todo_list_db
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_USER=admin
+    #volumes:
+      - ./data/mysql:/var/lib/mysql:rw,delegated
+      - ./resources/docker-initdb:/docker-entrypoint-initdb.d:ro,cached
+
+  redis:
+    image: redis:6-alpine
+    container_name: PROJECT_ID-redis
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: PROJECT_ID-redis-cmd
+    environment:
+      - REDIS_HOSTS=local:redis
+      - HTTP_USER=docker
+      - HTTP_PASSWORD=docker
+    ports:
+      - 8081:8081
+    depends_on:
+      - redis
+
+  # Access mailhog at http://localhost:8025/
+  mailhog:
+    image: mailhog/mailhog
+    container_name: PROJECT_ID-mailhog
+    ports:
+      - "8025:8025"
