@@ -4,6 +4,7 @@ import {v4} from 'uuid'
 
 function AddTodo({onAddTodo}: AddTodoProps) {
     const [todo, setTodo] = useState<TodoInterface>({completed: false, id: v4(), title: ""});
+
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         onAddTodo(todo);
@@ -11,11 +12,7 @@ function AddTodo({onAddTodo}: AddTodoProps) {
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
-        setTodo({
-            id: v4(),
-            title: value,
-            completed: false
-        });
+        setTodo({...todo, title: value});
     }
     return (
         <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow-md">

@@ -23,35 +23,16 @@ class IndexController extends AbstractActionController
      * @return JsonModel
      * @var $table Todo
      */
-    public function indexAction(): JsonModel
+    public function indexAction()//: JsonModel
     {
-//        $view = new ViewModel();
-//        $row = $model->getByID(1);
-//        $view->setVariable('id', $row->getid());
-//        $view->setVariable('todo', $row->getTodo());
-//        $view->setVariable('completed', $row->getCompleted());
-//        $view->setTemplate('application/index/index');
-//        return $view;
+        $request = $this->getRequest();
 
+        if($request->isPost()) {
+          //  return new JsonModel($this->todoTable->getTodoList());
 
-//        $data = [
-//            [
-//                "id" => '222',
-//                "title" => 'Buy groceries',
-//                "completed" => 0
-//            ],
-//            [
-//                "id" => '34343hhhg',
-//                "title" => 'Call mom',
-//                "completed" => 0
-//            ],
-//            [
-//                "id" => "34343hhfffhg",
-//                "title" => 'Call dad',
-//                "completed" => 0
-//            ]
-//        ];
+        } else {
 
         return new JsonModel($this->todoTable->getTodoList());
+        }
     }
 }

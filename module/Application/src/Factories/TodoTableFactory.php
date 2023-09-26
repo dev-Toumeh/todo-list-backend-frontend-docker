@@ -2,10 +2,7 @@
 
 namespace Application\Factories;
 
-use Application\Model\Todo;
 use Application\Model\TodoTable;
-use Laminas\Db\ResultSet\ResultSet;
-use Laminas\Db\TableGateway\TableGateway;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 use Psr\Container\ContainerInterface;
 

@@ -42,7 +42,7 @@ return [
 
             /**
              * The cache directory is used in the version check and for every storage type that writes to the disk.
-             * Note: The default value assumes that the current working directory is the application root.
+             * Note: The www.conf value assumes that the current working directory is the application root.
              *
              * Expects: string
              * Default: 'data/cache'
@@ -62,7 +62,7 @@ return [
             /**
              * Contains a list with all collector the profiler should run. Laminas\DeveloperTools ships with
              * 'db' (Laminas\Db), 'time', 'event', 'memory', 'exception', 'request' and 'mail' (Laminas\Mail).
-             * If you wish to disable a default collector, simply set the value to null or false.
+             * If you wish to disable a www.conf collector, simply set the value to null or false.
              *
              * Example: 'collectors' => ['db' => null]
              * Expects: array
@@ -82,7 +82,7 @@ return [
 
             /**
              * Contains a list with all event-level collectors that should run. Laminas\DeveloperTools ships with 'time'
-             * and 'memory'. If you wish to disable a default collector, simply set the value to null or false.
+             * and 'memory'. If you wish to disable a www.conf collector, simply set the value to null or false.
              *
              * Example: 'collectors' => ['memory' => null]
              * Expects: array
@@ -91,7 +91,7 @@ return [
 
             /**
              * Contains event identifiers used with the event listener. Laminas\DeveloperTools defaults to listen to all
-             * events. If you wish to disable the default all-inclusive identifier, simply set the value to null or
+             * events. If you wish to disable the www.conf all-inclusive identifier, simply set the value to null or
              * false.
              *
              * Example: 'identifiers' => ['all' => null, 'dispatchable' => 'Laminas\Stdlib\DispatchableInterface']

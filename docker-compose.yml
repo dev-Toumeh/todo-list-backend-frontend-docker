@@ -3,17 +3,17 @@ services:
 
   web:
     image: ghcr.io/geerteltink/nginx
-    working_dir: /app
-    container_name: PROJECT_ID-web
+    container_name: todo-list-web
     ports:
       - "80:80"
     volumes:
       - ./public:/app/public:ro,cached
+      - ./docker/nginx/config/conf.d/www.conf:/etc/nginx/sites-enabled/www.conf
 
   php:
     build:
       dockerfile: ./docker/php/Dockerfile
-    container_name: PROJECT_ID-php
+    container_name: todo-list-php
     environment:
       XDEBUG_ENABLED: 1
       XDEBUG_REMOTE_AUTOSTART: 1
@@ -21,8 +21,6 @@ services:
       XDEBUG_REMOTE_CONNECT_BACK: 1
       XDEBUG_REMOTE_HOST: host.docker.internal
       PHP_IDE_CONFIG: serverName=localhost
-    ports:
-      - "9004:9003"
     volumes:
       - ./docker/php/local:/usr/local/etc/php
       - .:/app
@@ -30,7 +28,7 @@ services:
 
   db:
     image: ghcr.io/geerteltink/mysql
-    container_name: PROJECT_ID-db
+    container_name: todo-list-db
     ports:
       - "3306:3306"
     environment:
@@ -38,29 +36,40 @@ services:
       - MYSQL_PASSWORD=admin
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_USER=admin
-    #volumes:
+    volumes:
       - ./data/mysql:/var/lib/mysql:rw,delegated
       - ./resources/docker-initdb:/docker-entrypoint-initdb.d:ro,cached
 
   redis:
     image: redis:6-alpine
-    container_name: PROJECT_ID-redis
+    container_name: todo-list-redis
 
   redis-commander:
     image: rediscommander/redis-commander:latest
-    container_name: PROJECT_ID-redis-cmd
+    container_name: todo-list-redis-cmd
     environment:
       - REDIS_HOSTS=local:redis
       - HTTP_USER=docker
       - HTTP_PASSWORD=docker
     ports:
-      - 8081:8081
+      - "8081:8081"
     depends_on:
       - redis
 
   # Access mailhog at http://localhost:8025/
   mailhog:
     image: mailhog/mailhog
-    container_name: PROJECT_ID-mailhog
+    container_name: todo-list-mailhog
     ports:
       - "8025:8025"
+
+  nodejs:
+    image: node:latest
+    working_dir: /app
+    #   build:
+ #     dockerfile: ./docker/node/Dockerfile
+    volumes:
+     - ./frontend:/app
+    command: npm start
+    ports:
+     - "3000:3000"

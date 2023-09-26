@@ -9,29 +9,10 @@ import axios from "axios";
 
 function App() {
 
-     const originalToDoList: TodoInterface[] = [
-    //     {
-    //         id: '222',
-    //         title: 'Buy groceries',
-    //         completed: false
-    //     },
-    //     {
-    //         id: '34343hhhg',
-    //         title: 'Call mom',
-    //         completed: false
-    //     },
-    //     {
-    //         id: uuidv4(),
-    //         title: 'Call dad',
-    //         completed: false
-    //     }
-     ]
-    const [toDoList, setToDoList] = useState<TodoInterface[]>(originalToDoList);
+    const [toDoList, setToDoList] = useState<TodoInterface[]>();
 
     const fetchToDoList = async () => {
         const response = await axios.get('http://localhost');
-        //console.log(response);
-        console.log(response);
         setToDoList([...response.data]);
     }
 
@@ -40,8 +21,8 @@ function App() {
     },[]);
 
     const handleCompleted = (id: string) => {
-        setToDoList((oldList: TodoInterface[]) => {
-            return oldList.map((todo: TodoInterface) => {
+        setToDoList((oldList) => {
+            return oldList?.map((todo: TodoInterface) => {
                 if (todo.id === id) {
                     return {...todo, completed: !todo.completed};
                 }
@@ -51,8 +32,14 @@ function App() {
     }
 
     const handleAddTodo = async (newTodo: TodoInterface) =>{
-        const response = await axios.post('http://localhost:3001/todos', newTodo);
-        setToDoList((oldList: TodoInterface[]) => [...oldList, response.data]);
+        try {
+            const response = await axios.post('http://localhost', newTodo);
+            // Assuming the response contains the updated todo list data, update the state.
+            setToDoList([...response.data]);
+        } catch (error) {
+            // Handle any potential errors here.
+            console.error('Error adding todo:', error);
+        }
     }
     return (
         <div className="flex flex-col items-center justify-center h-screen">

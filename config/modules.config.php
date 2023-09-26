@@ -25,6 +25,5 @@ return [
     'Laminas\Router',
     'Laminas\Validator',
     'Laminas\Diactoros',
-    'LmcCors',
     'Application',
 ];

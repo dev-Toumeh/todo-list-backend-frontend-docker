@@ -44,7 +44,7 @@ return [
         'cache_dir' => 'data/cache/',
 
         // Whether or not to enable modules dependency checking.
-        // Enabled by default, prevents usage of modules that depend on other modules
+        // Enabled by www.conf, prevents usage of modules that depend on other modules
         // that weren't loaded.
         // 'check_dependencies' => true,
     ],

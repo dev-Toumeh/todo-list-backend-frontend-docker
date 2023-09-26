@@ -6,7 +6,7 @@ namespace Application;
 
 use Application\Controller\Factories\IndexControllerFactory;
 use Application\Controller\IndexController;
-use Application\Controller\TestTodoList;
+use Application\Controller\TodoController;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
@@ -29,12 +29,12 @@ return [
                 'type'    => Segment::class,
                 'may_terminate' => true,
                 'options' => [
-                    'route'    => '/application[/:action[/:id]]',
+                    'route'    => '/todolist[/:action[/:id]]',
                     'constraints' => [
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]+'],
                     'defaults' => [
-                        'controller' => TestTodoList::class,
+                        'controller' => TodoController::class,
                         'action'     => 'todolist',
                     ],
                 ],
@@ -44,7 +44,7 @@ return [
     'controllers' => [
         'factories' => [
             IndexController::class => IndexControllerFactory::class,
-            TestTodoList::class => InvokableFactory::class,
+            TodoController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
